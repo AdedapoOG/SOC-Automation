@@ -27,7 +27,7 @@ This project sets up a **Security Operations Center (SOC) Home Lab** to monitor,
 ##  **Installation Steps**
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/SOC-HomeLab.git
+git clone https://github.com/adedapo.og/SOC-HomeLab.git
 cd SOC-HomeLab
 
 
