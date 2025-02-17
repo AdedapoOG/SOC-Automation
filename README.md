@@ -33,7 +33,15 @@ In this phase, I set up a **Security Operations Center (SOC) home lab** by deplo
 - **Splunk SIEM (Ubuntu Server)** for log analysis.  
 - **Kali Linux (Attacker VM)** for penetration testing.  
 - **Metasploitable (Victim VM)** for simulating attacks.
-- **VMware Workstation** To run and network these virtual machines.  
+- **VMware Workstation** To run and network these virtual machines.
+![image](https://github.com/user-attachments/assets/755edf7d-389c-4614-9267-07eb3119544a)
+
+## 📌 Configuring VMware Networking
+I configured a Host-Only Network (VMnet2) so that all three VMs can communicate securely without internet access.
+
+
+![image](https://github.com/user-attachments/assets/755edf7d-389c-4614-9267-07eb3119544a)
+
 
 ![image](https://github.com/user-attachments/assets/f2be4113-7b66-4a38-9fc7-e36dc11f9266)
 ![image](https://github.com/user-attachments/assets/8ea778f0-c808-474a-bef8-84975df864a1)
