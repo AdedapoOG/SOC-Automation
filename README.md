@@ -26,9 +26,23 @@ This project sets up a **Security Operations Center (SOC) Home Lab** to monitor,
 
 ##  **Installation Steps**
 ### **Step 1: Clone the Repository**
-```bash
-git clone https://github.com/adedapo.og/SOC-HomeLab.git
-cd SOC-HomeLab
+# 🛡️ Phase 1: Setting Up the SOC Lab Environment  
+
+## 📌 Overview  
+In this phase, I set up a **Security Operations Center (SOC) home lab** by deploying:  
+- **Splunk SIEM (Ubuntu Server)** for log analysis.  
+- **Kali Linux (Attacker VM)** for penetration testing.  
+- **Metasploitable (Victim VM)** for simulating attacks.
+- **VMware Workstation** To run and network these virtual machines.  
+
+![image](https://github.com/user-attachments/assets/f2be4113-7b66-4a38-9fc7-e36dc11f9266)
+![image](https://github.com/user-attachments/assets/8ea778f0-c808-474a-bef8-84975df864a1)
+
+installing ssh for remote management and finding the VM ip address
+![image](https://github.com/user-attachments/assets/5fa06423-1dbc-44d1-9546-f5a710193b3a)
+
+
+
 
 
 
