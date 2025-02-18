@@ -83,6 +83,40 @@ I landed on this page
 
 ![Screenshot 2025-02-17 041934](https://github.com/user-attachments/assets/78e788cc-940f-4b8a-b51d-3865f7846935)
 
+# 🛡️ Phase 3: Configuring Log Collection in Splunk
+
+## 📌 Overview  
+In this phase, I configured Kali Linux (Attacker) and Metasploitable (Victim) to send system logs to Splunk SIEM (Ubuntu Server). This allows monitoring of security events such as login attempts, attack simulations, and suspicious activities.
+
+![Screenshot 2025-02-17 041934](https://github.com/user-attachments/assets/78e788cc-940f-4b8a-b51d-3865f7846935)
+
+## 📌 Enable Log Collection in Splunk
+I enabled log collection in Splunk
+
+![image](https://github.com/user-attachments/assets/270fb7c4-4868-44ac-9875-dcf940e4829f)
+ Splunk UDP log input configuration
+
+## 📌 Configure Kali Linux to Send Logs to Splunk
+On Kali Linux, I modified the syslog configuration file to forward logs to Splunk SIEM.
+
+![image](https://github.com/user-attachments/assets/a7860ecf-75f6-492d-8cd6-c1b614c1232e)
+configuring to forward logs to Splunk from Kali
+
+![image](https://github.com/user-attachments/assets/e1acabcc-3c41-4bf9-a15a-d7b63e0d4054)
+configuring to forward logs to Splunk from Metasploit
+
+
+
+## 📌Verified Splunk for forwarding
+I tried to verify if logs are being received by splunk from Kali and Metasploit
+![image](https://github.com/user-attachments/assets/d401e8d8-9328-4f3b-a188-4f998a82184a)
+![Uploading image.png…]()
+
+
+logging successful
+
+
+
 
 
 
