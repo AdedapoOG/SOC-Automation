@@ -112,10 +112,13 @@ I tried to verify if logs are being received by splunk from Kali and Metasploit
 ![Screenshot 2025-02-18 011737](https://github.com/user-attachments/assets/808ba7bd-f471-4134-b611-74b930afd340)
 
 ![image](https://github.com/user-attachments/assets/d401e8d8-9328-4f3b-a188-4f998a82184a)
-
-
-
 logging successful from both machines
+
+
+to help detect unauthorized changes to logs I configured splunk to verify check
+![image](https://github.com/user-attachments/assets/d74d6b76-223d-4a4a-8a6f-50927253cc49)
+configuring
+
 
 
 
