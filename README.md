@@ -109,11 +109,13 @@ configuring to forward logs to Splunk from Metasploit
 
 ## 📌Verified Splunk for forwarding
 I tried to verify if logs are being received by splunk from Kali and Metasploit
+![Screenshot 2025-02-18 011737](https://github.com/user-attachments/assets/808ba7bd-f471-4134-b611-74b930afd340)
+
 ![image](https://github.com/user-attachments/assets/d401e8d8-9328-4f3b-a188-4f998a82184a)
-![Uploading image.png…]()
 
 
-logging successful
+
+logging successful from both machines
 
 
 
