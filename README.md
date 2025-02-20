@@ -119,6 +119,9 @@ to help detect unauthorized changes to logs I configured splunk to verify check
 ![image](https://github.com/user-attachments/assets/d74d6b76-223d-4a4a-8a6f-50927253cc49)
 configuring
 
+## 📌In a nutshell
+In **Phase 3**, I configured log forwarding from **Kali Linux** and **Metasploitable** to **Splunk** via **UDP port 514**, ensuring that security logs are centralized for analysis. I first enabled **Splunk to receive logs**, set up a **syslog input**, and verified connectivity. On **Kali**, I installed and configured **rsyslog**, resolving package issues, modifying `/etc/rsyslog.conf`, and confirming log forwarding using `tcpdump`. Similarly, on **Metasploitable**, I adjusted **rsyslog settings**, restarted the service, and verified log transmission. After ensuring both machines were successfully sending logs, I ran **Splunk queries** to confirm event ingestion, analyzed logs using **statistics and event searches**, and optimized **log retention settings** via `indexes.conf`. The phase was successfully completed with **Splunk receiving and displaying logs from both sources**, setting the foundation for **security event detection and analysis** in **Phase 4**.
+
 
 
 
