@@ -36,7 +36,7 @@ In this phase, I set up a **Security Operations Center (SOC) home lab** by deplo
 - **VMware Workstation** To run and network these virtual machines.
 ![image](https://github.com/user-attachments/assets/755edf7d-389c-4614-9267-07eb3119544a)
 
-## 📌 Configuring VMware Networking
+## Configuring VMware Networking
 I configured a Host-Only Network (VMnet2) so that all three VMs can communicate securely without internet access.
 
 To verify Network Connectivity I pinged kali ip and metasploit ip address to ensure the virtual machines can communicate
@@ -47,32 +47,32 @@ To verify Network Connectivity I pinged kali ip and metasploit ip address to ens
 installing ssh for remote management and finding the VM ip address
 ![image](https://github.com/user-attachments/assets/5fa06423-1dbc-44d1-9546-f5a710193b3a)
 
-# 🛡️ Phase 2: Installing and Configuring Splunk SIEM 
+# Phase 2: Installing and Configuring Splunk SIEM 
 
-## 📌 Overview  
+##  Overview  
 In this phase, I installed and configured Splunk SIEM on Ubuntu Server to collect and analyze security logs from Kali Linux and Metasploitable. This setup enables log monitoring, threat detection, and attack analysis within the SOC home lab.
 
 ![Screenshot 2025-02-17 041934](https://github.com/user-attachments/assets/78e788cc-940f-4b8a-b51d-3865f7846935)
 
-## 📌 Update Ubuntu and Install Dependencies
+##  Update Ubuntu and Install Dependencies
 Before installing Splunk, I updated Ubuntu and installed essential tools.
 sudo apt update && sudo apt upgrade -
 This ensures that the system has the latest security updates and required utilities for downloading Splunk.
 
 ![Screenshot 2025-02-17 002823](https://github.com/user-attachments/assets/0cad2818-5864-42b6-ab8b-0003fc8c8444)
 
-## 📌Download and Install Splunk
+## Download and Install Splunk
 I tried to download Splunk Enterprise from Splunk’s official website using the wget command
 ![Screenshot 2025-02-17 023049](https://github.com/user-attachments/assets/8f5cc5a4-ff3e-4add-a66b-8e84cf6fc146)
 but I realised I had to connect ubuntu to the internet, I then changed the host to allow internet and I was able to download the application and ensure that the system has the latest security updates and required utilities.
 ![Screenshot 2025-02-17 024757](https://github.com/user-attachments/assets/dc05ac57-0ae9-4dad-a179-e3b181960fb0)
 
-## 📌 Start and Configure Splunk
+##  Start and Configure Splunk
 After installation, I navigated to the Splunk directory and started the service I alsi enabled it to boot on start
 ![Screenshot 2025-02-17 025328](https://github.com/user-attachments/assets/9e17f3da-0b78-4631-b884-1b53ac46c830)
 
 
-## 📌 Accessing Splunk Web Interface
+##  Accessing Splunk Web Interface
 Once Splunk was running, I accessed the web interface from my host machine’s browser using the Ubuntu VM's IP. 
 ![image](https://github.com/user-attachments/assets/440860ae-0f7c-446c-b788-a85043bc9fb3)
 
@@ -83,20 +83,20 @@ I landed on this page
 
 ![Screenshot 2025-02-17 041934](https://github.com/user-attachments/assets/78e788cc-940f-4b8a-b51d-3865f7846935)
 
-# 🛡️ Phase 3: Configuring Log Collection in Splunk
+#  Phase 3: Configuring Log Collection in Splunk
 
-## 📌 Overview  
+##  Overview  
 In this phase, I configured Kali Linux (Attacker) and Metasploitable (Victim) to send system logs to Splunk SIEM (Ubuntu Server). This allows monitoring of security events such as login attempts, attack simulations, and suspicious activities.
 
 ![Screenshot 2025-02-17 041934](https://github.com/user-attachments/assets/78e788cc-940f-4b8a-b51d-3865f7846935)
 
-## 📌 Enable Log Collection in Splunk
+##  Enable Log Collection in Splunk
 I enabled log collection in Splunk
 
 ![image](https://github.com/user-attachments/assets/270fb7c4-4868-44ac-9875-dcf940e4829f)
  Splunk UDP log input configuration
 
-## 📌 Configure Kali Linux to Send Logs to Splunk
+##  Configure Kali Linux to Send Logs to Splunk
 On Kali Linux, I modified the syslog configuration file to forward logs to Splunk SIEM.
 
 ![image](https://github.com/user-attachments/assets/a7860ecf-75f6-492d-8cd6-c1b614c1232e)
@@ -107,7 +107,7 @@ configuring to forward logs to Splunk from Metasploit
 
 
 
-## 📌Verified Splunk for forwarding
+## Verified Splunk for forwarding
 I tried to verify if logs are being received by splunk from Kali and Metasploit
 ![Screenshot 2025-02-18 011737](https://github.com/user-attachments/assets/808ba7bd-f471-4134-b611-74b930afd340)
 
@@ -119,7 +119,7 @@ to help detect unauthorized changes to logs I configured splunk to verify check
 ![image](https://github.com/user-attachments/assets/d74d6b76-223d-4a4a-8a6f-50927253cc49)
 configuring
 
-## 📌In a nutshell
+## In a nutshell
 In **Phase 3**, I configured log forwarding from **Kali Linux** and **Metasploitable** to **Splunk** via **UDP port 514**, ensuring that security logs are centralized for analysis. I first enabled **Splunk to receive logs**, set up a **syslog input**, and verified connectivity. On **Kali**, I installed and configured **rsyslog**, resolving package issues, modifying `/etc/rsyslog.conf`, and confirming log forwarding using `tcpdump`. Similarly, on **Metasploitable**, I adjusted **rsyslog settings**, restarted the service, and verified log transmission. After ensuring both machines were successfully sending logs, I ran **Splunk queries** to confirm event ingestion, analyzed logs using **statistics and event searches**, and optimized **log retention settings** via `indexes.conf`. The phase was successfully completed with **Splunk receiving and displaying logs from both sources**, setting the foundation for **security event detection and analysis** in **Phase 4**.
 
 **Security Operations Center (SOC) Home Lab Documentation**
@@ -151,7 +151,16 @@ Despite successful detection and alerting, the automated blocking of Kali Linux'
 - **Incorrect Action Triggering** – Splunk may not be properly executing the blocking command.
 
 ## **6. Screenshots & Evidence**
-![Screenshot 2025-03-10 071413](https://github.com/user-attachments/assets/7a0f051f-ad53-44ed-88a1-779f249414e0)
+![Screenshot 2025-02-25 230337](https://github.com/user-attachments/assets/30cec5c6-47a7-46f4-b31e-b055bdb1fac6)
+
+![Screenshot 2025-02-25 230442](https://github.com/user-attachments/assets/48233966-2b06-40a7-8e1f-0cb0d7d0e0d6)
+
+![Screenshot 2025-02-26 000925](https://github.com/user-attachments/assets/c4be9985-8cb2-44f5-8450-b9103cd795d4)
+
+![Screenshot 2025-02-25 232850](https://github.com/user-attachments/assets/49871610-43b6-471a-836a-a8aac158fe97)
+
+
+
 
 
 ## **7. Conclusion**
