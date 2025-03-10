@@ -1,20 +1,20 @@
 # SOC-Automation
 # 🛡️ Security Operations Center (SOC) Home Lab
 
-## 📌 Project Overview
+##  Project Overview
 This project sets up a **Security Operations Center (SOC) Home Lab** to monitor, detect, and respond to cyber threats. The lab includes **Splunk SIEM**, **Snort IDS**, and **Metasploit** to simulate real-world attacks and analyze security events.
 
-## 🎯 **Objectives**
-✅ **Deploy Splunk SIEM** to collect and analyze security logs.  
-✅ **Implement an IDS (Snort)** to detect network intrusions.  
-✅ **Simulate cyber attacks** using Metasploit on a vulnerable machine.  
-✅ **Automate detection and response** using custom Splunk rules.  
-✅ **Generate a report** on attack scenarios and mitigation techniques.  
+## **Objectives**
+ **Deploy Splunk SIEM** to collect and analyze security logs.  
+ **Implement an IDS (Snort)** to detect network intrusions.  
+ **Simulate cyber attacks** using Metasploit on a vulnerable machine.  
+ **Automate detection and response** using custom Splunk rules.  
+ **Generate a report** on attack scenarios and mitigation techniques.  
 
 ---
 
 ##  **Lab Setup**
-### **📌 System Requirements**
+### ** System Requirements**
 - **VMware Workstation** or **VirtualBox** for virtualization
 - **At least 8GB RAM** (16GB+ recommended)
 - **3 Virtual Machines (VMs)**:
@@ -26,9 +26,9 @@ This project sets up a **Security Operations Center (SOC) Home Lab** to monitor,
 
 ##  **Installation Steps**
 ### **Step 1: Clone the Repository**
-# 🛡️ Phase 1: Setting Up the SOC Lab Environment  
+#  Phase 1: Setting Up the SOC Lab Environment  
 
-## 📌 Overview  
+##  Overview  
 In this phase, I set up a **Security Operations Center (SOC) home lab** by deploying:  
 - **Splunk SIEM (Ubuntu Server)** for log analysis.  
 - **Kali Linux (Attacker VM)** for penetration testing.  
@@ -121,6 +121,48 @@ configuring
 
 ## 📌In a nutshell
 In **Phase 3**, I configured log forwarding from **Kali Linux** and **Metasploitable** to **Splunk** via **UDP port 514**, ensuring that security logs are centralized for analysis. I first enabled **Splunk to receive logs**, set up a **syslog input**, and verified connectivity. On **Kali**, I installed and configured **rsyslog**, resolving package issues, modifying `/etc/rsyslog.conf`, and confirming log forwarding using `tcpdump`. Similarly, on **Metasploitable**, I adjusted **rsyslog settings**, restarted the service, and verified log transmission. After ensuring both machines were successfully sending logs, I ran **Splunk queries** to confirm event ingestion, analyzed logs using **statistics and event searches**, and optimized **log retention settings** via `indexes.conf`. The phase was successfully completed with **Splunk receiving and displaying logs from both sources**, setting the foundation for **security event detection and analysis** in **Phase 4**.
+
+**Security Operations Center (SOC) Home Lab Documentation**
+
+## **4. Attacking Phase**
+### **4.1 Conducting Attacks with KALI**
+- Simulated various attacks, including:
+  - Exploiting vulnerabilities on the target machine.
+  - Running reverse shell payloads.
+  - Brute-force attacks.
+- Captured attack data in Splunk for monitoring.
+
+### **4.2 Alerting and Automated Response**
+- Configured Splunk alerts to trigger upon detecting suspicious activity.
+- Set up a response mechanism to automatically block the attacking IP (Kali Linux).
+- Verified alerts were successfully triggered in Splunk.
+
+## **5. Findings & Observations**
+### **5.1 Successful Outcomes**
+- Splunk successfully ingested logs and detected the simulated attacks.
+- Alerts were triggered upon detecting suspicious activity from the attacker.
+- Logs provided valuable insights into attack patterns.
+
+### **5.2 Known Issue: IP Blocking Not Working**
+Despite successful detection and alerting, the automated blocking of Kali Linux's IP address did not execute as expected. Potential reasons include:
+- **Script Execution Issues** – The blocking script may not have the correct permissions or execution rights.
+- **Splunk User Permissions** – The Splunk service may lack administrative privileges to modify firewall rules.
+- **Firewall/IPS Integration Gaps** – If an external firewall was used, API calls may not be configured correctly.
+- **Incorrect Action Triggering** – Splunk may not be properly executing the blocking command.
+
+## **6. Screenshots & Evidence**
+![Screenshot 2025-03-10 071413](https://github.com/user-attachments/assets/7a0f051f-ad53-44ed-88a1-779f249414e0)
+
+
+## **7. Conclusion**
+This SOC lab successfully demonstrated the ability to detect cyber threats in real time using Splunk. While the automatic blocking mechanism did not function as intended, the project provided valuable hands-on experience in security monitoring and incident detection.
+
+## **8. Next Steps & Improvements**
+- Debug and resolve the IP blocking issue.
+- Expand the SOC lab with additional attack scenarios.
+- Integrate a full-fledged Intrusion Prevention System (IPS) for automated response.
+- Optimize alerting thresholds to reduce false positives.
+
 
 
 
